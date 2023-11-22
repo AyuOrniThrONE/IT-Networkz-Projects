@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormGETElementsByName</title>
+    <script>
+        function check_fname() {
+            var fn=document.getElementById("first");
+            var FName=/^[a-zA-Z]+$/;
+            if (fn.value=="") {
+                alert("Enter First Name");
+                fn.style.backgroundColor="red";
+            }
+            else if (!FName.test(fn.value)) {
+                alert("Enter valid character");
+                fn.style.backgroundColor="red";
+                
+            }
+        }
+        function fullname() {
+            var fn=document.getElementById("first");
+            var mn=document.getElementById("middle");
+            var ln=document.getElementById("last");
+            alert(fn.value+" "+mn.value+" "+ln.value);
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <table border="1" align="center">
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" size="20" name="first" id="first" onblur="check_fname();"></td>
+            </tr>
+            <tr>
+                <td>Second Name</td>
+                <td><input type="text" size="20" name="middle" id="middle"></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" size="20" name="last" id="last"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="button" name="Submit" value="Submit" id="" onclick="fullname();"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
